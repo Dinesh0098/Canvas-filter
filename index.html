@@ -1,0 +1,54 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Camweara Assignment</title>
+	<style type="text/css">
+		.filterSlider{
+			display: flex; 
+			flex-direction: column; 
+		}
+		.rootContainer{
+			display: flex;
+			justify-content: space-evenly;
+		}
+		.canvasContainer{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.inputContainer{
+			margin-top: 12px;
+			display: flex;
+		    align-items: flex-end;
+		    justify-content: space-between;
+		}
+	</style>
+</head>
+<body>
+	<div id='canvas-container' class="rootContainer">
+		<div class="canvasContainer">
+			<canvas id="canvas" width="400" height="400" style=" border: 1px solid black"></canvas>
+			<div class="inputContainer">
+				<div>
+					<label>Image File:</label><br/>
+					<input type="file" id="imageUpload" name="imageUpload"/>
+				</div>
+				<div>
+					<input type="button" value="Reset Image" onclick="resetImage()">
+				</div>
+			</div>
+		</div>
+		<div class="fliterContainer">
+			<div class="filterSlider">	
+				<span>Contrast (<span id="contrastValue">0</span>)</span>
+	    		<input id="contrast" onchange="manipulateCanvas('contrast')" type="range" min="-99" max="99" value="0">	
+	    	</div>
+	    	<div class="filterSlider">
+	    		<span>Brightness (<span id="brightnessValue">0</span>)</span>
+	    		<input id="brightness" onchange="manipulateCanvas('brightness')" type="range" min="-99" max="99" value="0">	
+	    	</div>
+		</div>
+	</div>
+</body>
+<script src="main.js"></script>
+</html>
